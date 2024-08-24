@@ -33,6 +33,7 @@ def talk(text): #Permite a Mimi hablar al usuario
     engine.runAndWait()
 
 def listen(): #Captura la voz del usuario
+    rec = ""
     try:
         with sr.Microphone() as source:
             print("Escuchando...")
@@ -48,8 +49,8 @@ def listen(): #Captura la voz del usuario
 
 def run(): #Opciones
     rec = listen()
-    if 'estas ahi' in rec: #Saber si Mimi está activa
-        talk('Si, estoy aqui')
+    if 'hola' in rec: #Saber si Mimi está activa
+        talk('Hola! Estoy lista para ayudar')
     elif 'reproduce' in rec: #Reproducir en youtube
         if 'youtube':
             music = rec.replace('reproduce', '')
